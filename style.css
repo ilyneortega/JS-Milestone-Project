@@ -1,0 +1,36 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Papyrus';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(234, 221, 202);
+    color: black;
+}
+
+#game {
+    background-color: rgb(196, 164, 132);
+    display: flex;
+}
+
+.card {
+    width: 160px;
+    height: 120px;
+    font-size: 65px;
+    text-align: center;
+    background-color: rgb(234, 221, 202);
+    border-left: solid black 2px;
+    border-right: solid black 2px;
+    border-top: solid black 2px;
+    border-bottom: solid black 2px;
+    margin: 5px;
+    padding: 10px;
+    line-height: 120px;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    
+
+
+}
