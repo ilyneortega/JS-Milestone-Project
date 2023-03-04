@@ -130,6 +130,8 @@ function addCategory(category) {
         card.innerHTML = 300
     }
 
+    let score = 0
+
     card.setAttribute('data-question', question.question)
     card.setAttribute('data-answer-1', question.answers[0])
     card.setAttribute('data-answer-2', question.answers[1])
@@ -169,7 +171,26 @@ function flipCard() {
     buttonThree.innerHTML = this.getAttribute('data-answer-3')
     buttonFour.innerHTML = this.getAttribute('data-answer-4')
 
+    buttonOne.addEventListener('click', showResult)
+    buttonTwo.addEventListener('click', showResult)
+    buttonThree.addEventListener('click', showResult)
+    buttonFour.addEventListener('click', showResult)
+
+
     this.append(showText, buttonOne, buttonTwo, buttonThree, buttonFour)
+
+    const allCards = array.from(document.querySelectorAll('.card'))
+    allCards.forEach(card => card.removeEventListener('click', flipCard))
+}
+
+function showResult() {
+   const cardButton = this.parentElement
+
+   if (cardButton.getAttribute('data-correct')== this.innerHTML) {
+    score = score + parseInt (cardButton.getAttribute('data-value'))
+   }
+
+
 }
 
 
