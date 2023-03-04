@@ -130,7 +130,7 @@ function addCategory(category) {
         card.innerHTML = 300
     }
 
-    let score = 0
+    // let score = 0
 
     card.setAttribute('data-question', question.question)
     card.setAttribute('data-answer-1', question.answers[0])
@@ -144,6 +144,11 @@ function addCategory(category) {
    })
 }
 
+let score = 0
+
+categoryList.forEach(category => addCategory(category))
+
+
 
 function flipCard() {
     this.innerHTML = ''
@@ -154,7 +159,8 @@ function flipCard() {
     showText.classList.add('show-text')
     showText.innerHTML = this.getAttribute('data-question')
 
-    document.createElement('button')
+   // document.createElement('button')
+
     const buttonOne = document.createElement('button')
     const buttonTwo = document.createElement('button')
     const buttonThree = document.createElement('button')
@@ -179,18 +185,18 @@ function flipCard() {
 
     this.append(showText, buttonOne, buttonTwo, buttonThree, buttonFour)
 
-    const allCards = array.from(document.querySelectorAll('.card'))
+    const allCards = Array.from(document.querySelectorAll('.card'))
     allCards.forEach(card => card.removeEventListener('click', flipCard))
 }
 
 function showResult() {
-    const allCards = array.from(document.querySelectorAll('.card'))
+    const allCards = Array.from(document.querySelectorAll('.card'))
     allCards.forEach(card => card.addEventListener('click', flipCard))
 
    const cardButton = this.parentElement
 
    if (cardButton.getAttribute('data-correct')== this.innerHTML) {
-    score = score + parseInt (cardButton.getAttribute('data-value'))
+    score = score + parseInt(cardButton.getAttribute('data-value'))
     scoreDisplay.innerHTML = score
     cardButton.classList.add('correct-answer')
     setTimeout(() => {
@@ -219,4 +225,3 @@ cardButton.removeEventListener('click', flipCard)
 
 
 
-categoryList.forEach(category => addCategory(category))
