@@ -184,11 +184,33 @@ function flipCard() {
 }
 
 function showResult() {
+    const allCards = array.from(document.querySelectorAll('.card'))
+    allCards.forEach(card => card.addEventListener('click', flipCard))
+
    const cardButton = this.parentElement
 
    if (cardButton.getAttribute('data-correct')== this.innerHTML) {
     score = score + parseInt (cardButton.getAttribute('data-value'))
-   }
+    scoreDisplay.innerHTML = score
+    cardButton.classList.add('correct-answer')
+    setTimeout(() => {
+        while (cardButton.firstChild) {
+            cardButton.removeChild(cardButton.lastChild)
+        }
+        cardButton.innerHTML = cardButton.getAttribute('data-value') 
+    }, 100)
+
+} else {
+    cardButton.classList.add('wrong-answer')
+    setTimeout(() => {
+        while (cardButton.firstChild) {
+            cardButton.removeChild(cardButton.lastChild)
+        }
+        cardButton.innerHTML = 0 
+    }, 100)
+}
+
+cardButton.removeEventListener('click', flipCard)
 
 
 }
