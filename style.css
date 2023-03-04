@@ -64,3 +64,12 @@ h2 {
 .first-button {
     background-color: aliceblue;
 }
+
+
+.correct-answer {
+    background-color: rgb(154, 171, 158);
+}
+
+.wrong-answer {
+    background-color: rgb(171, 113, 121) ;
+}
