@@ -24,8 +24,9 @@ h2 {
     width: 160px;
     height: 120px;
     font-size: 65px;
+    font-weight: 500;
     text-align: center;
-    background-color: rgb(196, 164, 132);
+    background-color: rgb(217, 193, 169);
     border-left: solid black 2px;
     border-right: solid black 2px;
     border-top: solid black 2px;
@@ -44,7 +45,7 @@ h2 {
     text-decoration: underline;
     margin: 15px;
     padding: 0;
-    background-color: rgb(196, 164, 132);
+    background-color: rgb(217, 193, 169);
 }
 
 p {
@@ -62,9 +63,40 @@ h2 {
 }
 
 .first-button {
-    background-color: aliceblue;
+    margin: 2px;
+    padding: 5px;
+    font-size: 11px;
+    font-family: 'Papyrus';
+    background-color: rgb(214, 210, 199);
+    font-weight: 900;
 }
 
+.second-button {
+    margin: 2px;
+    padding: 5px;
+    font-size: 11px;
+    font-family: 'Papyrus';
+    background-color: rgb(214, 210, 199);
+    font-weight: 900;
+}
+
+.third-button {
+    margin: 2px;
+    padding: 5px;
+    font-size: 11px;
+    font-family: 'Papyrus';
+    background-color: rgb(214, 210, 199);
+    font-weight: 900;
+}
+
+.fourth-button {
+    margin: 2px;
+    padding: 5px;
+    font-size: 11px;
+    font-family: 'Papyrus';
+    background-color: rgb(214, 210, 199);
+    font-weight: 900;
+}
 
 .correct-answer {
     background-color: rgb(154, 171, 158);
