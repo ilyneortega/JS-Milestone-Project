@@ -13,13 +13,13 @@ const categoryList = [
             },
             {
                 question: 'What boy band did Zayn Malik leave in 2015?',
-                answers: ['Jonas Brothers','Backstreet Boys', 'NSYNC', 'One Direction'],
+                answers: ['Jonas Brothers','5SOS', 'NSYNC', 'One Direction'],
                 correct: 'One Direction',
                 level: 'medium',
             },
             {
                 question: "Which Marvel movie's soundtrack won two Grammys?",
-                answers: ['Black Panther', 'Iron Man', 'Thor', 'Doctor Strange'],
+                answers: ['Black Panther', 'Iron Man', 'Thor', 'Spider Man'],
                 correct: 'Black Panther',
                 level: 'hard'
             },
@@ -59,9 +59,9 @@ const categoryList = [
                 level: 'easy',
             },
             {
-                question: 'The Wolf of Wall Street was based on a true story about who?',
-                answers: ['Leonardo DiCaprio', 'Matthew McConaughey', 'Jordan Belfort', 'Donald Trump'],
-                correct: 'Jordan Belfort',
+                question: 'In The Matrix, Neo takes a pill that is what color?',
+                answers: ['Green', 'Blue', 'Red', 'Yellow'],
+                correct: 'Red',
                 level: 'medium'
             },
             {
@@ -129,7 +129,51 @@ function addCategory(category) {
     if(question.level === 'hard') {
         card.innerHTML = 300
     }
+
+    card.setAttribute('data-question', question.question)
+    card.setAttribute('data-answer-1', question.answers[0])
+    card.setAttribute('data-answer-2', question.answers[1])
+    card.setAttribute('data-answer-3', question.answers[2])
+    card.setAttribute('data-answer-4', question.answers[3])
+    card.setAttribute('data-correct', question.correct)
+    card.setAttribute('data-value', card.getInnerHTML())
+
+    card.addEventListener('click', flipCard)
    })
 }
+
+
+function flipCard() {
+    this.innerHTML = ''
+    this.style.fontSize = '15px'
+    this.style.lineHeight = '20px'
+
+    const showText = document.createElement('div')
+    showText.classList.add('show-text')
+    showText.innerHTML = this.getAttribute('data-question')
+
+    document.createElement('button')
+    const buttonOne = document.createElement('button')
+    const buttonTwo = document.createElement('button')
+    const buttonThree = document.createElement('button')
+    const buttonFour = document.createElement('button')
+
+    buttonOne.classList.add('first-button')
+    buttonTwo.classList.add('second-button')
+    buttonThree.classList.add('third-button')
+    buttonFour.classList.add('fourth-button')
+
+
+    buttonOne.innerHTML = this.getAttribute('data-answer-1')
+    buttonTwo.innerHTML = this.getAttribute('data-answer-2')
+    buttonThree.innerHTML = this.getAttribute('data-answer-3')
+    buttonFour.innerHTML = this.getAttribute('data-answer-4')
+
+    this.append(showText, buttonOne, buttonTwo, buttonThree, buttonFour)
+}
+
+
+
+
 
 categoryList.forEach(category => addCategory(category))

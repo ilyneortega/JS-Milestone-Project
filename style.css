@@ -14,6 +14,12 @@ body {
     display: flex;
 }
 
+h2 {
+    margin: 15px;
+    padding: 0;
+    text-decoration: underline;
+}
+
 .card {
     width: 160px;
     height: 120px;
@@ -34,6 +40,11 @@ body {
 .genre-name {
     text-align: center; 
     font-size: 30px;
+    font-weight: 900;
+    text-decoration: underline;
+    margin: 15px;
+    padding: 0;
+    background-color: rgb(196, 164, 132);
 }
 
 p {
@@ -48,4 +59,8 @@ h1 {
 h2 {
     font-weight: 800;
     font-size: 30px;
+}
+
+.first-button {
+    background-color: aliceblue;
 }
